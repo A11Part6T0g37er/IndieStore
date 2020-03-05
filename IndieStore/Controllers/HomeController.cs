@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DomainModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,8 @@ namespace IndieStore.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var user = new Admin() {Name="C'iar" };
+            return View(user);
         }
 
         public ActionResult About()
