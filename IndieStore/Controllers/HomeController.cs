@@ -11,8 +11,8 @@ namespace IndieStore.Controllers
     {
         public ActionResult Index()
         {
-            var user = new Admin() {Name="C'iar" };
-            return View(user);
+            var game = new Game() {Name="DOOM" };
+            return View(game);
         }
 
         public ActionResult About()
