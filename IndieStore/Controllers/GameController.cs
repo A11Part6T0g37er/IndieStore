@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace IndieStore.Controllers
 {
-    public class HomeController : Controller
+    public class GameController : Controller
     {
         public ActionResult Index()
         {
