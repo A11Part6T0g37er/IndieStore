@@ -11,7 +11,7 @@ namespace IndieStore.Controllers
     {
         public ActionResult Index()
         {
-            var game = new Game() {Name="DOOM" };
+            var game = new Item() {Name="DOOM" };
             return View(game);
         }
 
