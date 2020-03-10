@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndieStore", "IndieStore\In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndieStore.Tests", "IndieStore.Tests\IndieStore.Tests.csproj", "{ABC5FAF0-DD95-4F78-9C74-C2FE15073C6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModel", "DomainModel\DomainModel.csproj", "{AB76220C-4ED3-4234-BC3B-EFC7998168D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainModel", "DomainModel\DomainModel.csproj", "{AB76220C-4ED3-4234-BC3B-EFC7998168D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{984FA692-E0D9-4CEA-AA0F-C4F7DC628B81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{AB76220C-4ED3-4234-BC3B-EFC7998168D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB76220C-4ED3-4234-BC3B-EFC7998168D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB76220C-4ED3-4234-BC3B-EFC7998168D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{984FA692-E0D9-4CEA-AA0F-C4F7DC628B81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{984FA692-E0D9-4CEA-AA0F-C4F7DC628B81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{984FA692-E0D9-4CEA-AA0F-C4F7DC628B81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{984FA692-E0D9-4CEA-AA0F-C4F7DC628B81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
