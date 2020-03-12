@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+
 
 namespace DomainModel
 {
-    public abstract class BaseGood : IItem
+    public abstract class BaseGood : IGoods
     {
        
-        [HiddenInput(DisplayValue = false)]
+      
         public int Id { get; set; }
 
         [Required]
@@ -27,9 +28,11 @@ namespace DomainModel
         public byte[] ImageData { get; set; }
         public string ImageMimeType { get; set; }
 
+        public List<Category> Categories { get; set; }
+
     }
 
-class Category
+public class Category : ICategory
     {
         public int Id { get; set; }
         public string Name { get; set; }

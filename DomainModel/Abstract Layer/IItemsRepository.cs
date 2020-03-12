@@ -4,10 +4,14 @@ using System.Text;
 
 namespace DomainModel
 {
-    public interface IItemsRepository
+    /// <summary>
+    /// Generic repository of items
+    /// </summary>
+    /// <typeparam name="T">T must implement IGoods interface</typeparam>
+    public interface IItemsRepository<T> where T : IGoods
     {
-        IEnumerable<Item> Items { get; }
-        void SaveItem(Item item);
-        Item DeleteItem(int itemId);
+        IEnumerable<T> Items { get; }
+        void SaveItem(T item);
+        T DeleteItem(int itemId);
     }
 }

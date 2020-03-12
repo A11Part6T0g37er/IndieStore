@@ -1,12 +1,8 @@
 ﻿namespace DomainModel
 {
-    public interface IItem
+    public interface ICategory
     {
          int Id { get; set; }
          string Name { get; set; }
-         decimal Price { get; set; }
     }
-
-    
-
 }
