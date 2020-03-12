@@ -22,11 +22,11 @@ namespace DomainModel.Explicit_Realization
 
         public void SaveGame(Game game)
         {
-            if (game.GameId == 0)
+            if (game.Id == 0)
                 context.Games.Add(game);
             else
             {
-                Game dbEntry = context.Games.Find(game.GameId);
+                Game dbEntry = context.Games.Find(game.Id);
                 if (dbEntry != null)
                 {
                     dbEntry.Name = game.Name;
@@ -58,7 +58,7 @@ namespace DomainModel.Explicit_Realization
                 context.items.Add(item);
             else
             {
-                item dbEntry = context.items.Find(item.itemId);
+                Game dbEntry = context.items.Find(item.itemId);
                 if (dbEntry != null)
                 {
                     dbEntry.Name = item.Name;

@@ -21,7 +21,7 @@ namespace DomainModel
 
         public string Description { get; set; }
         
-        //TODO
+        //TODO Logic implementing furthemore
         [Required]
         public bool IsFree { get; set; }
        
@@ -41,7 +41,9 @@ public class Category : ICategory
    
 
     public class Game : BaseGood
-    { }
+    {
+        public int GameId { get; set; }
+    }
 
     
 

@@ -9,7 +9,7 @@ namespace DomainModel
          decimal Price { get; set; }
          string Description { get; set; }
          bool IsFree { get; set; }
-         List<ICategory> Categories { get; set; }
+        
     }
 
     
