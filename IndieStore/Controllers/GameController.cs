@@ -5,13 +5,21 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace IndieStore.Controllers
 {
     public class GameController : Controller
     {
+        IGamesRepository repo;
+      public  GameController(IGamesRepository r)
+        {
+            repo = r;
+        }
         public ActionResult Index()
         {
-            var game = new Item() {Name="DOOM" };
+            //TODO Repo demo
+            repo.GetGamesList();
+            var game = new Game() {Name="DOOM" };
             return View(game);
         }
 

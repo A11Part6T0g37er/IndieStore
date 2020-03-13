@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Web;
 
 namespace DomainModel.Explicit_Realization
 {
-    class EFGameRepository : IItemsRepository<IGoods>
+    class EFGameRepository : IGamesRepository
     {
         EFDbContext context;
 
@@ -18,7 +19,7 @@ namespace DomainModel.Explicit_Realization
             get { return context.Games; }
         }
 
-        public IEnumerable<IGoods> Items => throw new NotImplementedException();
+       
 
         public void SaveGame(Game game)
         {
@@ -32,7 +33,7 @@ namespace DomainModel.Explicit_Realization
                     dbEntry.Name = game.Name;
                     dbEntry.Description = game.Description;
                     dbEntry.Price = game.Price;
-                    dbEntry.Category = game.Category;
+                    dbEntry.Categories = game.Categories;
                     dbEntry.ImageData = game.ImageData;
                     dbEntry.ImageMimeType = game.ImageMimeType;
                 }
@@ -41,7 +42,7 @@ namespace DomainModel.Explicit_Realization
         }
 
 
-        public Game DeleteGame(int gameId)
+        public /*Game*/ void DeleteGame(int gameId)
         {
             Game dbEntry = context.Games.Find(gameId);
             if (dbEntry != null)
@@ -49,32 +50,14 @@ namespace DomainModel.Explicit_Realization
                 context.Games.Remove(dbEntry);
                 context.SaveChanges();
             }
-            return dbEntry;
+          //  return dbEntry;
         }
 
-        public void SaveItem(IGoods item)
+        public IEnumerable<Game> GetGamesList()
         {
-            if (item.itemId == 0)
-                context.items.Add(item);
-            else
-            {
-                Game dbEntry = context.items.Find(item.itemId);
-                if (dbEntry != null)
-                {
-                    dbEntry.Name = item.Name;
-                    dbEntry.Description = item.Description;
-                    dbEntry.Price = item.Price;
-                    dbEntry.Category = item.Category;
-                    dbEntry.ImageData = item.ImageData;
-                    dbEntry.ImageMimeType = item.ImageMimeType;
-                }
-            }
-            context.SaveChanges();
+            return context.Games.ToList();
         }
 
-        public IGoods DeleteItem(int itemId)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }
