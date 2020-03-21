@@ -2,7 +2,7 @@
     ViewBag.Title = "Home Page";
     
 }
-@Model IItem
+@Model Game
 
 <div class="jumbotron">
     <h1>ASP.NET</h1>
@@ -15,6 +15,7 @@
         <h2>Whole store</h2>
        
         <p>Game name @Model.Name</p>
+        @Html.LabelForModel()
         
     </div>
     <div class="col-md-4">

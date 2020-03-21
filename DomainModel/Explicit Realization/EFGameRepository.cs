@@ -6,13 +6,14 @@ using System.Web;
 
 namespace DomainModel.Explicit_Realization
 {
-    class EFGameRepository : IGamesRepository
+  public  class EFGameRepository : IGamesRepository
     {
         EFDbContext context;
 
-        public EFGameRepository()
+        public EFGameRepository(EFDbContext eFDbContext)
         {
-              }
+            context = eFDbContext;
+         }
 
         public IEnumerable<Game> Games
         {

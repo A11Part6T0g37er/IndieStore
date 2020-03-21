@@ -42,7 +42,14 @@ public class Category : ICategory
 
     public class Game : BaseGood
     {
-        public int GameId { get; set; }
+        public int GameId 
+        { 
+            get
+            { return Id; }
+
+            set 
+            { Id = GameId; } 
+        }
     }
 
     

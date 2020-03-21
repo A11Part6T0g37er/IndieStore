@@ -1,4 +1,5 @@
 ﻿using DomainModel;
+using DomainModel.Explicit_Realization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +11,16 @@ namespace IndieStore.Controllers
 {
     public class GameController : Controller
     {
-        IGamesRepository repo;
-      public  GameController(IGamesRepository r)
+        EFGameRepository repo;
+      public  GameController()
         {
-            repo = r;
+            repo = new EFGameRepository();
         }
         public ActionResult Index()
         {
             //TODO Repo demo
             repo.GetGamesList();
-            var game = new Game() {Name="DOOM" };
+            var game = new Game() { Name = "DOOM", Categories = { new Category() { Name = "DTF" } } };
             return View(game);
         }
 

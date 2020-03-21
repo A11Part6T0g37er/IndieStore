@@ -1,5 +1,9 @@
-﻿using System;
+﻿using DomainModel.Abstract_Layer;
+using DomainModel.Models;
+using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 
 namespace DomainModel.Explicit_Realization

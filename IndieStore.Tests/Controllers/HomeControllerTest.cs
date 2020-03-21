@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using IndieStore;
 using IndieStore.Controllers;
+using DomainModel.Explicit_Realization;
 
 namespace IndieStore.Tests.Controllers
 {
@@ -16,7 +17,7 @@ namespace IndieStore.Tests.Controllers
         public void Index()
         {
             // Arrange
-            GameController controller = new GameController();
+            GameController controller = new GameController(new EFGameRepository());
 
             // Act
             ViewResult result = controller.Index() as ViewResult;
@@ -29,7 +30,7 @@ namespace IndieStore.Tests.Controllers
         public void About()
         {
             // Arrange
-            GameController controller = new GameController();
+            GameController controller = new GameController(new EFGameRepository());
 
             // Act
             ViewResult result = controller.About() as ViewResult;
@@ -42,7 +43,7 @@ namespace IndieStore.Tests.Controllers
         public void Contact()
         {
             // Arrange
-            GameController controller = new GameController();
+            GameController controller = new GameController(new EFGameRepository());
 
             // Act
             ViewResult result = controller.Contact() as ViewResult;

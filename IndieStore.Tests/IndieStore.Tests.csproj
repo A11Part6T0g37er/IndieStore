@@ -99,6 +99,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DomainModel\DomainModel.csproj">
+      <Project>{AB76220C-4ED3-4234-BC3B-EFC7998168D5}</Project>
+      <Name>DomainModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IndieStore\IndieStore.csproj">
       <Project>{59447357-BF0B-4B15-BA29-CC147E9880EB}</Project>
       <Name>IndieStore</Name>
