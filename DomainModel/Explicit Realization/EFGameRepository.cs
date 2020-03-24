@@ -1,18 +1,21 @@
-﻿using System;
+﻿using DomainModel.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
 
+
 namespace DomainModel.Explicit_Realization
 {
   public  class EFGameRepository : IGamesRepository
     {
-        EFDbContext context;
+       private EFDbContext context;
 
-        public EFGameRepository(EFDbContext eFDbContext)
+        public EFGameRepository()
         {
-            context = eFDbContext;
+            //   context = eFDbContext;
+            context = new EFDbContext();
          }
 
         public IEnumerable<Game> Games
@@ -35,8 +38,8 @@ namespace DomainModel.Explicit_Realization
                     dbEntry.Description = game.Description;
                     dbEntry.Price = game.Price;
                     dbEntry.Categories = game.Categories;
-                    dbEntry.ImageData = game.ImageData;
-                    dbEntry.ImageMimeType = game.ImageMimeType;
+           //         dbEntry.ImageData = game.ImageData;
+           //         dbEntry.ImageMimeType = game.ImageMimeType;
                 }
             }
             context.SaveChanges();
@@ -58,7 +61,14 @@ namespace DomainModel.Explicit_Realization
         {
             return context.Games.ToList();
         }
+        public  void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                context.Dispose();
+            }
+            
+        }
 
-       
     }
 }

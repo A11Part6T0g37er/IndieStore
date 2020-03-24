@@ -1,8 +1,8 @@
 ﻿@{
     ViewBag.Title = "Home Page";
-    
+
 }
-@Model Game
+@model IEnumerable<DomainModel.Models.Game>
 
 <div class="jumbotron">
     <h1>ASP.NET</h1>
@@ -13,10 +13,14 @@
 <div class="row">
     <div class="col-md-8">
         <h2>Whole store</h2>
-       
-        <p>Game name @Model.Name</p>
-        @Html.LabelForModel()
-        
+        @{ foreach (var g in Model)
+            {
+                <p>Y now this</p>
+                @g.Name
+               
+            }
+        }
+        <p>Y now this</p>
     </div>
     <div class="col-md-4">
         <h2>Get more libraries</h2>

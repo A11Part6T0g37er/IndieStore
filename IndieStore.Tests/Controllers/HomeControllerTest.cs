@@ -17,7 +17,7 @@ namespace IndieStore.Tests.Controllers
         public void Index()
         {
             // Arrange
-            GameController controller = new GameController(new EFGameRepository());
+            GameController controller = new GameController();
 
             // Act
             ViewResult result = controller.Index() as ViewResult;
@@ -30,7 +30,7 @@ namespace IndieStore.Tests.Controllers
         public void About()
         {
             // Arrange
-            GameController controller = new GameController(new EFGameRepository());
+            GameController controller = new GameController();
 
             // Act
             ViewResult result = controller.About() as ViewResult;
@@ -43,7 +43,7 @@ namespace IndieStore.Tests.Controllers
         public void Contact()
         {
             // Arrange
-            GameController controller = new GameController(new EFGameRepository());
+            GameController controller = new GameController();
 
             // Act
             ViewResult result = controller.Contact() as ViewResult;

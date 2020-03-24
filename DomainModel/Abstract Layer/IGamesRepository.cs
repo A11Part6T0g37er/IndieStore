@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using DomainModel.Abstract_Layer;
+using DomainModel.Models;
+
 namespace DomainModel
 {
    

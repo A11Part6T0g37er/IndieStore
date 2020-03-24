@@ -1,9 +1,14 @@
-﻿using System.Data.Entity;
+﻿using DomainModel.Models;
+using System.Data.Entity;
 
 namespace DomainModel.Explicit_Realization
 {
     public class EFDbContext : DbContext
     {
+        public EFDbContext() : base("DefaultConnection") 
+        {
+            
+        }
         static EFDbContext()
         {
             Database.SetInitializer(new DbInitializer());
@@ -16,5 +21,11 @@ namespace DomainModel.Explicit_Realization
         }
 
         public DbSet<Game> Games { get; set; }
+
+        protected override void Dispose(bool disposing)
+        {
+           
+            base.Dispose(disposing);
+        }
     }
 }

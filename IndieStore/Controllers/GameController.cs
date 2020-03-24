@@ -1,5 +1,6 @@
 ﻿using DomainModel;
 using DomainModel.Explicit_Realization;
+using DomainModel.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,16 +12,17 @@ namespace IndieStore.Controllers
 {
     public class GameController : Controller
     {
-        EFGameRepository repo;
+     public   EFGameRepository repo;
       public  GameController()
         {
             repo = new EFGameRepository();
         }
+        
         public ActionResult Index()
         {
             //TODO Repo demo
-            repo.GetGamesList();
-            var game = new Game() { Name = "DOOM", Categories = { new Category() { Name = "DTF" } } };
+            IEnumerable<Game> game =  repo.GetGamesList();
+      //      var game = new Game() { Name = "DOOM", Categories = { new Category() { Name = "DTF" } }, Description = "DOOM e g",Id =10, GameId= 10, Price=999 };
             return View(game);
         }
 
@@ -36,6 +38,14 @@ namespace IndieStore.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                repo.Dispose(true);
+            }
+            base.Dispose(disposing);
         }
     }
 }
