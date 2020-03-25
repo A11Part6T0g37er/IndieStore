@@ -12,23 +12,26 @@ namespace DomainModel.Explicit_Realization
             {
                 Name = "DOOM:Eteranal",
                 Price = 99,
-               Categories = { shooter },
+            //   Categories = { shooter },
           //  Category = shooter,
                 Description = "Shoot`em all with no mercy!"
             };
+            doom.Categories.Add(shooter);
             Category strategy = new Category { Name = "Strategy" };
             Category strategy4x = new Category { Name = "4X" };
             Game civ = new Game()
             {
                 Name = "Civ VI",
                 Price = 999,
-                      Categories = {
-                           strategy,
-                           strategy4x }, 
-              
+                //       Categories = {
+                //              strategy,
+                //             strategy4x }, 
+                 
               //  Category = strategy,
                 Description = "Build`em up!" 
             };
+            civ.Categories.Add(strategy);
+            civ.Categories.Add(strategy4x);
             db.Games.Add(doom);
             db.Games.Add(civ);
             db.SaveChanges();

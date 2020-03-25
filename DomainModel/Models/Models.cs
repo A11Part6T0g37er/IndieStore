@@ -25,11 +25,13 @@ namespace DomainModel
         [Required]
         public bool IsFree { get; set; } = false;
 
+        private static readonly CategoryList categoryList = new CategoryList();
+
         //  public byte[] ImageData { get; set; }
         //   public string ImageMimeType { get; set; }
 
         //  public List<Category> Categories { get; set; }
-        public CategoryList Categories { get; set; }
+        public CategoryList Categories = categoryList; 
     }
 
     public class Category : ICategory

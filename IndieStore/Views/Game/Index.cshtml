@@ -17,10 +17,13 @@
             {
                 <p>Y now this</p>
                 @g.Name
+                @g.Categories.TakeWhile(m=>m.Name!=null).ToString()
                
+                @g.Price
+
             }
         }
-        <p>Y now this</p>
+
     </div>
     <div class="col-md-4">
         <h2>Get more libraries</h2>
